@@ -19,7 +19,14 @@ def netflix_read (r):
 
 	return (netflix_dict)
 
-		
+def rmse(a,p):
+	assert (len(a) == len(p))
+	sum1 = 0
+	for i range(len(a)):
+		sum1 += (a[i] - p[i])**2
+	mean = sum1/len(a)
+	r = math.sqrt(mean)
+	return r	
 	
 def netflix_predict():
 
