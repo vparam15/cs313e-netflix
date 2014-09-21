@@ -20,9 +20,14 @@ def main ():
 	return (netflix_dict)
 
 		
-
+	import pickle
 	def netflix_predict():
-	# read the key (movie title) from the dictionairy created 
+	# read the key (movie title) from the dictionairy created
+	for movid in netflix_dict:
+
+		with open('/u/prat0318/netflix-tests/savant-cacheMovies.txt','r') as f:
+		j = pickle.load(f) OR eval(f.readline())
+	print (j)
 	# go through savant-cachemovies.txt and find average movie rating 
 	# read  the associated values (customer ids) for the movie and find their average rating
 	# for each value, predict a weighted guess (using average customer rating and movie rating)
