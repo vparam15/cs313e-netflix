@@ -31,15 +31,30 @@ def netflix_predict():
 		avgmovie_dict[int(j1[0])] = float(j1[1]) #populate a dictionairy with movie id and average rating 		
 
 
-	with open('/u/prat0318/netflix-tests/savant-cacheUsers.txt','r') as f: # This accesses the average user rating file created by savant
-		k = f.readlines()
 
+	f = open('/u/prat0318/netflix-tests/ctd446-userAverageRating.txt')
+	r = f.read()
+	tmp = r.split(',')
+	tmp[0] = tmp[0].replace('{', '')
+	tmp[-1] = tmp[1].replace('}', '')
 	avguser_dict = {}
-	for m in k:
-		k1 = m.split()
-		k11 = k1[0].strip('\x00') #This was added to remove the trailing characters at the end of the text file
-		k12 = k1[1].strip('\x00')
-		avguser_dict[int(k11)] = float(k12) # Populated dictionairy with customer id and average customer rating
+	for i in tmp:
+		tmp2 = i.split(':')
+		tmp2[0] = tmp2[0].replace('"', '')
+		tmp2[1] = tmp2[1].replace('"', '')
+		custID = int(tmp2[0].replace(' ', ''))
+		rating = float(tmp2[1].replace(' ', ''))
+		avguser_dict[custID] = rating
+
+	# with open('/u/prat0318/netflix-tests/savant-cacheUsers.txt','r') as f: # This accesses the average user rating file created by savant
+	# 	k = f.readlines()
+
+	# avguser_dict = {}
+	# for m in k:
+	# 	k1 = m.split()
+	# 	k11 = k1[0].strip('\x00') #This was added to remove the trailing characters at the end of the text file
+	# 	k12 = k1[1].strip('\x00')
+	# 	avguser_dict[int(k11)] = float(k12) # Populated dictionairy with customer id and average customer rating
 
 
 
