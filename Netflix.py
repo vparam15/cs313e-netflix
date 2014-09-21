@@ -1,13 +1,25 @@
 def main ():
 	# readin the probe.txt file to standard in
 	def netflix_read (r):
-		s = r.readline()
-		# read the movie id which has a ':'
-		if s.find(':'):
-			a = s.remove(':')
-			return int(a)
-# read the lines below as customer ids up unitl a new movie id appears
-# create a dictionairy where the movie id = key and customer ids = values
+	index = 0
+	s = r.readlines()
+	numlines = len(s)
+	netflix_dict = {}
+	movid = 0
+
+	while index < numlines:	# read the movie id which has a ':'
+	
+		if ':' in s[index]:
+			movid = int(s[index].replace(':','').rstrip())
+			index += 1
+			custid = []	
+		custid.append(s[index].rstrip()) # read the lines below as customer ids up unitl a new movie id appears	
+		netflix_dict[movid] = custid # create a dictionairy where the movie id = key and customer ids = values
+		index += 1
+
+	return (netflix_dict)
+
+		
 
 	def netflix_predict():
 	# read the key (movie title) from the dictionairy created 
