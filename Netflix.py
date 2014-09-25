@@ -5,7 +5,7 @@ avgmovie_dict = {}
 avguser_dict = {}
 predict_dict = {}
 
-def rmse(a,p):
+def rmse(a,p): 
 	assert (len(a) == len(p))
 	s = sum(map(lambda x,y : (x-y)**2, a,p))
 	return (math.sqrt(s/len(a)))
@@ -47,19 +47,17 @@ def netflix_usercache(r3):
 		avguser_dict[int(u)] = float(r[u])
 	return (avguser_dict)
 
-def netflix_panswers(r4):
 	#This accesses the average movie rating file created by savant
-	with open('/u/prat0318/netflix-tests/savant-cacheActual.txt','r') as f: 		
-		j = eval(f.read())
-	for w in j.keys():
-		predict_dict[w] = j[w]
-	return (predict_dict)
+with open('/u/prat0318/netflix-tests/savant-cacheActual.txt','r') as f: 		
+	j = eval(f.read())
+for w in j.keys():
+	predict_dict[w] = j[w]
 
 def netflix_solve(r,w):
 	netflix_read(r) #/u/downing/cs/netflix/probe.txt
 	netflix_moviecache('/u/prat0318/netflix-tests/savant-cacheMovies.txt')
 	netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
-	netflix_panswers('/u/prat0318/netflix-tests/savant-cacheActual.txt')
+	# netflix_panswers('/u/prat0318/netflix-tests/savant-cacheActual.txt')
 	
 	s1 = 0
 	for x2 in avgmovie_dict.values():

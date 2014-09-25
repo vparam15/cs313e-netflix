@@ -1,7 +1,7 @@
 from io       import StringIO
 from unittest import main, TestCase
 
-from Netflix import rmse, netflix_read, netflix_moviecache, netflix_usercache, netflix_panswers, netflix_solve, avgmovie_dict, avguser_dict, predict_dict
+from Netflix import rmse, netflix_read, netflix_moviecache, netflix_usercache, netflix_solve, avgmovie_dict, avguser_dict, predict_dict
 
 import warnings 
 warnings.filterwarnings('ignore', category=DeprecationWarning)
@@ -146,30 +146,5 @@ class TestNetflix (TestCase) :
     #     netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
     #     self.assert_(len(avguser_dict) == 480195)
 
-
-    # # ----
-    # # netflix_panswers
-    # # ----
-
-    # def test_panswers1 (self) :
-    #     p = open ('answer', 'w')  
-    #     p.write(str({"1798 1663145": 4})) 
-    #     p.close() 
-    #     panswers1 = netflix_panswers('answer')
-    #     self.assertDictContainsSubset (panswers1, {"1798 1663145": 4})
-
-    #     r = StringIO ({"1798 1663145": 4})
-    #     panswers1 = netflix_panswers (r)
-    #     self.assertEqual (panswers1, {"1798 1663145": 4})
-
-    # def test_panswers2 (self) :
-    #     r = StringIO ({"13439 2072670": 3, "3864 2299969": 3})
-    #     panswers2 = netflix_panswers (r)
-    #     self.assertEqual (panswers2, {"13439 2072670": 3, "3864 2299969": 3})
-
-    # def test_panswers3 (self) :
-    #     r = StringIO ({"4932 1735937": 5, "11607 1906698": 5, "483 1939265": 1})
-    #     panswers3 = netflix_panswers (r)
-    #     self.assertEqual (panswers3, {"4932 1735937": 5, "11607 1906698": 5, "483 1939265": 1})
 
 main()
