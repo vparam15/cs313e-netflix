@@ -1,12 +1,9 @@
 import sys
 
-from Netflix import netflix_solve
+from Netflix import netflix_solve, rmse, neflix_read, netflix_moviecache, netflix_usercache, netflix_panswers
 
 # ----
 # main
 # ----
 
-sys.stdin = RunNetflix.inn
-sys.stdout = RunNetflix.out
-
-netflix_solve(sys.stdin, sys.stdout)
+netflix_read(sys.stdin)
