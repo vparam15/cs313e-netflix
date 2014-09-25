@@ -56,7 +56,7 @@ def netflix_panswers(r4):
 		predict_dict[w] = j[w]
 	return (predict_dict)
 
-def netflix_solve(r):
+def netflix_solve(r,w):
 	netflix_read(r) #/u/downing/cs/netflix/probe.txt
 	netflix_moviecache('/u/prat0318/netflix-tests/savant-cacheMovies.txt')
 	netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
