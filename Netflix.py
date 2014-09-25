@@ -75,7 +75,7 @@ def netflix_solve(r,w):
 
 	# read the key (movie title) from the dictionairy created
 	for x in netflix_dict.keys(): 
-		w.write (str(x) + ':') 
+		w.write (str(x) + ':\n') 
 		try:
 	# go through savant-cachemovies.txt and find average movie rating 			
 			m = avgmovie_dict[int(x)] 	
@@ -90,9 +90,9 @@ def netflix_solve(r,w):
 	# for each value, predict a weighted guess (using average customer rating and movie rating			
 			prediction =  total_avg + w1*(m-total_avg) + (1-w1)*(c-total_avg) 		
 			a.append(prediction) 
-			w.write(str(prediction))
+			w.write(str(prediction)+'\n')
 			rating = predict_dict[str(x) + " " + str(y)]
 			p.append(rating)
-	w.write('')		
+	w.write('\n')		
 	w.write('RMSE = ' + str(rmse(a,p)))
 
