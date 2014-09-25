@@ -57,8 +57,6 @@ def netflix_solve(r,w):
 	netflix_read(r) #/u/downing/cs/netflix/probe.txt
 	netflix_moviecache('/u/prat0318/netflix-tests/savant-cacheMovies.txt')
 	netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
-	# netflix_panswers('/u/prat0318/netflix-tests/savant-cacheActual.txt')
-	
 	s1 = 0
 	for x2 in avgmovie_dict.values():
 		s1 += x2
@@ -87,10 +85,10 @@ def netflix_solve(r,w):
 	# for each value, predict a weighted guess (using average customer rating and movie rating			
 			prediction =  total_avg + (w1)*(m-total_avg) + (w1)*(c-total_avg) 		
 			a.append(prediction) 
-			w.write(str(prediction)+'\n')
+			w.write(str(round((prediction), 1))+'\n')
 			rating = predict_dict[str(x) + " " + str(y)]
 			p.append(rating)
 	w.write('\n')		
-	w.write('RMSE = ' + str(rmse(a,p)))
+	w.write('RMSE = ' + str(round((rmse(a,p)), 2)))
 	
 
