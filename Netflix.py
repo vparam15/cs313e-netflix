@@ -10,9 +10,9 @@ def rmse(a,p):
 	s = sum(map(lambda x,y : (x-y)**2, a,p))
 	return (math.sqrt(s/len(a)))
 
-def netflix_read (r1):
+def netflix_read (r):
 	# readin the probe.txt file to standard in
-	r = open(r1,'r')	
+	# r = open(r1,'r')	
 	index = 0
 	s = r.readlines()
 	numlines = len(s)
@@ -56,8 +56,8 @@ def netflix_panswers(r4):
 		predict_dict[w] = j[w]
 	return (predict_dict)
 
-def netflix_solve():
-	netflix_read(sys.argv[1]) #/u/downing/cs/netflix/probe.txt
+def netflix_solve(r):
+	netflix_read(r) #/u/downing/cs/netflix/probe.txt
 	netflix_moviecache('/u/prat0318/netflix-tests/savant-cacheMovies.txt')
 	netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
 	netflix_panswers('/u/prat0318/netflix-tests/savant-cacheActual.txt')
@@ -75,7 +75,7 @@ def netflix_solve():
 
 	# read the key (movie title) from the dictionairy created
 	for x in netflix_dict.keys(): 
-		# print (x,':') 
+		w.write (str(x) + ':') 
 		try:
 	# go through savant-cachemovies.txt and find average movie rating 			
 			m = avgmovie_dict[int(x)] 	
@@ -90,10 +90,10 @@ def netflix_solve():
 	# for each value, predict a weighted guess (using average customer rating and movie rating			
 			prediction =  total_avg + w1*(m-total_avg) + (1-w1)*(c-total_avg) 		
 			a.append(prediction) 
-			# print (prediction)
+			w.write(str(prediction))
 			rating = predict_dict[str(x) + " " + str(y)]
 			p.append(rating)
-	print ()		
-	print ('RMSE =',rmse(a,p))
+	w.write('')		
+	w.write('RMSE = ' + str(rmse(a,p)))
 
 netflix_solve()

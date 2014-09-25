@@ -6,4 +6,4 @@ from Netflix import netflix_solve, rmse, neflix_read, netflix_moviecache, netfli
 # main
 # ----
 
-netflix_read(sys.stdin)
+netflix_solve(sys.stdin, sys.stdout)
