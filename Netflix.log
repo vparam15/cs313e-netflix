@@ -1,3 +1,51 @@
+commit 950927b540213406bf52a91f9bc135c1ec7e21b0
+Author: vparam15 <vparam15@gmail.com>
+Date:   Thu Sep 25 18:13:09 2014 -0500
+
+    Delete RunNetflix.in.txt
+
+commit 22d6c7417dd145783014cc332d36b16bbbabca96
+Author: vparam15 <vparam15@gmail.com>
+Date:   Thu Sep 25 18:13:00 2014 -0500
+
+    Delete RunNetflix.out.txt
+
+commit edf717a8d5079f724a35aaae6a1b186193a5f384
+Author: vparam15 <vparam15@gmail.com>
+Date:   Thu Sep 25 18:12:52 2014 -0500
+
+    Delete predict.py
+
+commit c0db9a4c3366db9e2ae86254c7f1da13cd4b67ff
+Author: vparam15 <vparam15@gmail.com>
+Date:   Thu Sep 25 18:12:46 2014 -0500
+
+    Delete readtest.txt
+
+commit cba123756a5ca4c500a4c4b6ae842c6ff82c45ee
+Author: vparam15 <vparam15@gmail.com>
+Date:   Thu Sep 25 18:12:32 2014 -0500
+
+    Delete Readfile.py
+
+commit 0069c2bbd112845f41e459bfa3adf6893e1965cc
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Thu Sep 25 18:11:48 2014 -0500
+
+    Corrected rounding errors on output file
+
+commit ab2d89c3d98321acae32b8b83194c17e4d63a03a
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Thu Sep 25 16:21:58 2014 -0500
+
+    test netflix added with unit test, pydoc created and netflix,py modified to remove a function
+
+commit 7699d04da6b88fb98b5e201b5eba5b1c879e0e8d
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Thu Sep 25 15:28:52 2014 -0500
+
+    Fixed the tests so that 17/18 run and submitted first runs of pydoc, git log, and RunNetflix.out
+
 commit 37a5fc6b209a7c8eedec77b76321501b47e7d1ca
 Author: Jash Choraria <jashchoraria@hotmail.com>
 Date:   Thu Sep 25 13:42:37 2014 -0500
