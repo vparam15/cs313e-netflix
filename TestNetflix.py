@@ -1,8 +1,11 @@
 from io       import StringIO
 from unittest import main, TestCase
 
-from Netflix import rmse, netflix_read, netflix_moviecache, netflix_usercache, netflix_panswers, netflix_solve
+from Netflix import rmse, netflix_read, netflix_moviecache, netflix_usercache, netflix_panswers, netflix_solve, avgmovie_dict, avguser_dict, predict_dict
 
+import warnings 
+warnings.filterwarnings('ignore', category=DeprecationWarning)
+warnings.filterwarnings('ignore', category=ResourceWarning)
 # -----------
 # TestNetflix
 # -----------
@@ -35,28 +38,32 @@ class TestNetflix (TestCase) :
         p = [10, 10, 10]
         rmse4 = rmse (a, p)
         self.assertEqual (rmse4, 1)
+    
+    def test_rmse5 (self) :
+        a = [23, 39, 69]
+        p = [12, 14, 16]
+        rmse5 = rmse (a, p)
+        self.assertEqual (rmse5, 34.42382895611701)
+
 
     # ----
     # netflix_read
     # ----
 
-    # def test_read1 (self) :
-    #     j = open ('read','w')
-    #     j.write (
-    #     j.close()
-    #     # r = StringIO ("10:\n1\n2\n3\n4")
-    #     read1 = netflix_read ('read')
-    #     self.assertDictEqual (read1, {10: [1, 2, 3, 4]})
+    def test_read1 (self) :
+        r = StringIO ("10:\n1\n2\n3\n4")
+        read1 = netflix_read (r)
+        self.assertDictEqual (read1, {10: ['1', '2', '3', '4']})
 
-    # def test_read2 (self) :
-    #     r = StringIO ("70:\n9999\n999999\n9999999999")
-    #     read2 = netflix_read (r)
-    #     self.assertEqual (read2, {70: [9999, 999999, 9999999999]})
+    def test_read2 (self) :
+        r = StringIO ("70:\n9999\n999999\n9999999999")
+        read2 = netflix_read (r)
+        self.assertEqual (read2, {10: ['1', '2', '3', '4'], 70: ['9999', '999999', '9999999999']})
 
-    # def test_read3 (self) :
-    #     r = StringIO ("1:\n2\n3:\n4\n5:\n6")
-    #     read3 = netflix_read (r)
-    #     self.assertEqual (read3, {1: [2], 3: [4], 5: [6]})
+    def test_read3 (self) :
+        r = StringIO ("1:\n2\n3:\n4\n5:\n6")
+        read3 = netflix_read (r)
+        self.assertEqual (read3, {10: ['1', '2', '3', '4'], 70: ['9999', '999999', '9999999999'], 1: ['2'], 3: ['4'], 5: ['6']})
 
     # ----
     # netflix_moviecache
@@ -113,9 +120,8 @@ class TestNetflix (TestCase) :
         self.assertDictEqual (user1, {100: 200})
 
     def test_user2 (self) :
-        j = open ('user', 'w')  
-        j.write(str({2.3: 2.33, 3.3: 3.44})) 
-        j.close() 
+        with open ('user', 'w') as j:  
+           j.write(str({2.3: 2.33, 3.3: 3.44})) 
         user2 = netflix_usercache ('user')
         # j.close()
         self.assertDictEqual (user2, {100: 200.0, 2: 2.33, 3: 3.44})
@@ -136,9 +142,9 @@ class TestNetflix (TestCase) :
         # j.close()
         self.assertDictEqual (user4, {100: 200.0, 2: 2.33, 3: 3.44, 7: 2.0, 8: 4.0, 5: 3.21})
 
-    def test_user5 (self) :
-        netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
-        self.assert_(len(avguser_dict) == 17770)
+    # def test_user5 (self) :
+    #     netflix_usercache('/u/prat0318/netflix-tests/savant-cacheUsers.txt')
+    #     self.assert_(len(avguser_dict) == 480195)
 
 
     # # ----
@@ -146,6 +152,12 @@ class TestNetflix (TestCase) :
     # # ----
 
     # def test_panswers1 (self) :
+    #     p = open ('answer', 'w')  
+    #     p.write(str({"1798 1663145": 4})) 
+    #     p.close() 
+    #     panswers1 = netflix_panswers('answer')
+    #     self.assertDictContainsSubset (panswers1, {"1798 1663145": 4})
+
     #     r = StringIO ({"1798 1663145": 4})
     #     panswers1 = netflix_panswers (r)
     #     self.assertEqual (panswers1, {"1798 1663145": 4})

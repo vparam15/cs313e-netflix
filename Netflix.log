@@ -1,0 +1,101 @@
+commit 37a5fc6b209a7c8eedec77b76321501b47e7d1ca
+Author: Jash Choraria <jashchoraria@hotmail.com>
+Date:   Thu Sep 25 13:42:37 2014 -0500
+
+    Added unit tests to test for corner cases, population cases, and errors
+
+commit cf2043dd8af26f13c49e7a53987c7fbea8a86f1b
+Author: Jash Choraria <jashchoraria@hotmail.com>
+Date:   Thu Sep 25 11:59:54 2014 -0500
+
+    added new line characters to the output
+
+commit 593a1832e31b7c9de09cc748a2374cc05cea4741
+Author: Jash Choraria <jashchoraria@hotmail.com>
+Date:   Thu Sep 25 11:57:25 2014 -0500
+
+    Changed the functions being imported to allow for testing
+
+commit c91407063c4fef50da98983e90d6e9b97aa856d9
+Author: Jash Choraria <jashchoraria@hotmail.com>
+Date:   Thu Sep 25 11:55:51 2014 -0500
+
+    Removed an extra call function which was interupting the interpretation of the input file
+
+commit 749449e89da403b9b661a48cf4d1bcaafd30273f
+Author: Jash Choraria <jashchoraria@hotmail.com>
+Date:   Thu Sep 25 11:53:21 2014 -0500
+
+     Netflix.py now acepts standard in as issue is now fixed
+
+commit e572f43fab5b780575a990699aaa7b81476176fb
+Author: Jash Choraria <jashchoraria@hotmail.com>
+Date:   Thu Sep 25 11:50:52 2014 -0500
+
+    Files updated to accept standard in and standard out
+
+commit 290ac59372b276184f0fc0c0e762d59da9370af9
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Thu Sep 25 11:31:00 2014 -0500
+
+    Added the run, test, input, and output files for Netflix
+
+commit b5a67f4b83a078f57ac4bb4a40f6202022f679ca
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Wed Sep 24 22:17:07 2014 -0500
+
+    Significant commit: finally got RMSE to 1.00, wrote 1000 lines of acceptance tests, and drafted run harness
+
+commit f053c65a431f62ef349154ea0ad62551124d5a0a
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Wed Sep 24 19:49:19 2014 -0500
+
+    Transferred changes from draft (Readfile.py) and broke code up into functions inside Netflix.py
+
+commit 43a1b26e870e92b6e1af044595672a229aabd514
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sun Sep 21 18:54:24 2014 -0500
+
+    Contains some unfinished scratchwork because we could not locate the movie ID 9999 in our probe.txt answer file
+
+commit 65a4b6cc6194293f19919d1da83d0c1a241c5e2d
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sun Sep 21 17:16:03 2014 -0500
+
+    Updated Netflix.py with the root mean square function
+
+commit ae570e14a1b085721fa41d8091dfb89336fdba5c
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sun Sep 21 16:19:54 2014 -0500
+
+    Modified Netflix.py to use a different Average User Rating cache after encountering problems with the previous cache
+
+commit 240ff5ceb240bbed21a90bd0d9372ac8d547d543
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sun Sep 21 15:18:46 2014 -0500
+
+    Netflix.py updated with imported caches for average movie ratings and average user ratings
+
+commit da4edf6d2edcb9e619f741276b74e015507aa94d
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sat Sep 20 20:48:22 2014 -0500
+
+    First attempt at importing public caches in netflix_predict function
+
+commit 1a14c68785a2278aa18aa4fc2dd45e62a74e6103
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sat Sep 20 20:11:54 2014 -0500
+
+    Netflix.py modified with the netflix_read function which reads probe.txt
+
+commit 53d2175cc9e11e0ba3c0605967c9890b2bfde041
+Author: Varun Parameswaran <vparam15@gmail.com>
+Date:   Sat Sep 20 18:23:20 2014 -0500
+
+    First Netflix.py file containing project outline and objective
+
+commit 44687476b52c6c3ee853cfc8602c786b1ec8c553
+Author: vparam15 <vparam15@gmail.com>
+Date:   Wed Sep 17 19:43:46 2014 -0500
+
+    Initial commit

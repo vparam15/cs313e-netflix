@@ -12,7 +12,6 @@ def rmse(a,p):
 
 def netflix_read (r):
 	# readin the probe.txt file to standard in
-	# r = open(r1,'r')	
 	index = 0
 	s = r.readlines()
 	numlines = len(s)
@@ -69,7 +68,7 @@ def netflix_solve(r,w):
 
 	m = 0
 	c = 0
-	w1 = 0.473
+	w1 = 0.70
 	a = []
 	p = []
 
@@ -88,11 +87,12 @@ def netflix_solve(r,w):
 			except KeyError:
 				c = total_avg
 	# for each value, predict a weighted guess (using average customer rating and movie rating			
-			prediction =  total_avg + w1*(m-total_avg) + (1-w1)*(c-total_avg) 		
+			prediction =  total_avg + (w1)*(m-total_avg) + (w1)*(c-total_avg) 		
 			a.append(prediction) 
 			w.write(str(prediction)+'\n')
 			rating = predict_dict[str(x) + " " + str(y)]
 			p.append(rating)
 	w.write('\n')		
 	w.write('RMSE = ' + str(rmse(a,p)))
+	
 
