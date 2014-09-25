@@ -96,4 +96,3 @@ def netflix_solve(r,w):
 	w.write('')		
 	w.write('RMSE = ' + str(rmse(a,p)))
 
-netflix_solve()
